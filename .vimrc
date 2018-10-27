@@ -30,9 +30,9 @@ au FileType cpp setlocal tabstop=2 shiftwidth=2 expandtab
 function! Run()
     if &ft == 'cpp'
         make %:r.bin
-        ! %:r.bin
+        ! ./%:r.bin
     elseif &ft == 'python'
-        !python3 %
+        !/usr/bin/env python %
     endif
 endfunction
 nnoremap <leader>b :call Run()<CR>
@@ -79,4 +79,7 @@ let g:ycm_confirm_extra_conf=0
 let g:ycm_complete_in_comments=1
 
 au jwc BufNewFile *.cpp call append(0, ["#include <bits/stdc++.h>", "#include \"leetcode.h\"", "using namespace std;"])
-
+"Jump out of brackets
+if !exists('g:AutoPairsShortcutJump')
+  let g:AutoPairsShortcutJump = '<M-n>'
+endif
