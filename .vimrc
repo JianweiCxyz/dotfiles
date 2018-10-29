@@ -83,3 +83,5 @@ au jwc BufNewFile *.cpp call append(0, ["#include <bits/stdc++.h>", "#include \"
 if !exists('g:AutoPairsShortcutJump')
   let g:AutoPairsShortcutJump = '<M-n>'
 endif
+
+nnoremap <F12> :YcmCompleter GoTo<CR>
