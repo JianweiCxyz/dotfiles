@@ -42,7 +42,7 @@ nnoremap <C-f> :Autoformat<CR>
 let g:formatters_python = ['yapf']
 
 "Short cut to edit vim settings
-command! Set tabedit $MYVIMRC
+command! Set tabedit ~/.vimrc
 autocmd jwc BufWritePost ~/.vimrc   so $MYVIMRC
 
 "Copy all until main method
@@ -85,3 +85,6 @@ if !exists('g:AutoPairsShortcutJump')
 endif
 
 nnoremap <F12> :YcmCompleter GoTo<CR>
+" No highlight in search
+nnoremap <Leader><space> :noh<cr>
+
