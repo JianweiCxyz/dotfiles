@@ -31,8 +31,8 @@ function! Run()
     if &ft == 'cpp'
         make %:r.bin
         ! ./%:r.bin
-    elseif &ft == 'python'
-        !/usr/bin/env python %
+    else
+        make
     endif
 endfunction
 nnoremap <leader>b :call Run()<CR>
