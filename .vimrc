@@ -32,7 +32,7 @@ function! Run()
         make %:r.bin
         ! ./%:r.bin
     else
-        make
+        make!
     endif
 endfunction
 nnoremap <leader>b :call Run()<CR>
