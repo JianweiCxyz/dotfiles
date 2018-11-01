@@ -6,6 +6,7 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdcommenter'
 Plug 'pangloss/vim-javascript'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 "General settings
@@ -19,11 +20,10 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set autoindent
-set nopaste	
 "Set my own awgroup
 augroup jwc
     autocmd!
-augroup END
+augroup end
 au FileType cpp setlocal tabstop=2 shiftwidth=2 expandtab
 
 "Compile and run
@@ -62,7 +62,7 @@ nnoremap <leader>p Go<ESC>"*p<CR>
 " Nerdtree Plugin
 map <C-n> :NERDTreeToggle<CR>
 " close when only nerdtree/scratchpad left
-function! CloseWhenNoFile() 
+function! CloseWhenNoFile()
     if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree())
         q
     endif
@@ -81,10 +81,14 @@ let g:ycm_complete_in_comments=1
 au jwc BufNewFile *.cpp call append(0, ["#include <bits/stdc++.h>", "#include \"leetcode.h\"", "using namespace std;"])
 "Jump out of brackets
 if !exists('g:AutoPairsShortcutJump')
-  let g:AutoPairsShortcutJump = '<M-n>'
+    let g:AutoPairsShortcutJump = '<M-n>'
 endif
 
 nnoremap <F12> :YcmCompleter GoTo<CR>
 " No highlight in search
 nnoremap <Leader><space> :noh<cr>
 
+" solarized
+syntax enable
+set background=dark
+colorscheme solarized
