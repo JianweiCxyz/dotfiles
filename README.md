@@ -4,6 +4,9 @@ This is my various text based configs for vim, bash etc.
 ## Basics
 ```
 sudo apt install vim curl git cmake aria2 tmux
+git config --global user.email "jianweichen@utexas.edu"
+git config --global user.name "JianweiChen"
+
 ```
 ## pyenv
 ```
