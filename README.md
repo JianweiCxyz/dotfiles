@@ -4,6 +4,9 @@ This is my various text based configs for vim, bash etc.
 ## Basics
 ```
 sudo apt install vim curl git cmake aria2 tmux
+git config --global user.email "jianweichen@utexas.edu"
+git config --global user.name "JianweiChen"
+
 ```
 ## pyenv
 ```
@@ -21,6 +24,12 @@ sudo apt install mpv
 git clone https://github.com/JianweiCxyz/dotfiles
 cd ~/.vim/plugged/YouCompleteMe
 python install.py --clang-completer
+```
+For javascript
+```
+curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo npm i -g typescript js-beautify
 ```
 # Set up
 ```
