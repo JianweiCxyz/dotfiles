@@ -16,6 +16,12 @@ xz-utils tk-dev libffi-dev liblzma-dev
 ```
 git clone https://github.com/JianweiCxyz/dotfiles
 ```
+For javascript
+```
+curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo npm i -g typescript js-beautify
+```
 # Set up
 ```
 ln -s ~/dotfiles/.vimrc .vimrc
