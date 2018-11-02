@@ -85,6 +85,7 @@ if !exists('g:AutoPairsShortcutJump')
 endif
 
 nnoremap <F12> :YcmCompleter GoTo<CR>
+nnoremap <F2> :YcmCompleter RefactorRename 
 " No highlight in search
 nnoremap <Leader><space> :noh<cr>
 
