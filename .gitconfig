@@ -1,0 +1,7 @@
+[core]
+        editor = 'vim'
+[push]
+        default = matching
+[user]
+        name = 'JianweiChen'
+        email = 'jianweichen@utexas.edu'
