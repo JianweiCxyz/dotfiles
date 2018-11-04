@@ -36,3 +36,9 @@ sudo npm i -g typescript js-beautify
 ln -s ~/dotfiles/.vimrc .vimrc
 ln -s ~/dotfiles/.tmux.conf .tmux.conf
 ```
+# Hardware related
+## Palm rejection
+```
+xinput set-prop <divice id> "Synaptics Palm Dimensions" 5 5
+```
+
