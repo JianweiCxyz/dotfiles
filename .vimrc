@@ -7,11 +7,12 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdcommenter'
 Plug 'pangloss/vim-javascript'
 Plug 'altercation/vim-colors-solarized'
+Plug 's3rvac/AutoFenc'
 call plug#end()
 
 "General settings
 set nu
-set mouse=a
+set mouse=n
 set autowrite
 
 "Set tabs
@@ -20,17 +21,17 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set autoindent
+set encoding=utf-8
 "Set my own awgroup
 augroup jwc
     autocmd!
 augroup end
-au FileType cpp setlocal tabstop=2 shiftwidth=2 expandtab
+au FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
 
 "Compile and run
 function! Run()
     if &ft == 'cpp'
-        make %:r.bin
-        ! ./%:r.bin
+        make %:r.run 
     else
         make!
     endif
@@ -51,7 +52,7 @@ function! CopyAllExceptMain()
     call setpos('.', [bufnr("%"), 1, 1, 0])
     let end = search('int *main(', 'n')
     let end = end == 0 ? line('$') : end - 1
-    execute "4," end "y +"
+    execute "3," end "y +"
     call setpos('.', cursor)
 endfunction
 "Copy content to clipboard
@@ -78,18 +79,19 @@ let g:ctrlp_custom_ignore = ['\v[\/]\.node_modules']
 let g:ycm_confirm_extra_conf=0
 let g:ycm_complete_in_comments=1
 
-au jwc BufNewFile *.cpp call append(0, ["#include <bits/stdc++.h>", "#include \"leetcode.h\"", "using namespace std;"])
-"Jump out of brackets
-if !exists('g:AutoPairsShortcutJump')
-    let g:AutoPairsShortcutJump = '<M-n>'
-endif
+au jwc BufNewFile *.cpp call append(0, ["#include <bits/stdc++.h>", "using namespace std;"])
 
 nnoremap <F12> :YcmCompleter GoTo<CR>
 nnoremap <F2> :YcmCompleter RefactorRename 
 " No highlight in search
 nnoremap <Leader><space> :noh<cr>
+" Jump outside '"({
+if !exists('g:AutoPairsShortcutJump')
+  let g:AutoPairsShortcutJump = '<C-l>'
+endif
 
 " solarized
 syntax enable
 set background=dark
 colorscheme solarized
+
