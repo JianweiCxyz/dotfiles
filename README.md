@@ -3,8 +3,13 @@ This is my various text based configs for vim, bash etc.
 # Prerequisites
 ## Basics
 ```
-sudo apt install vim curl git cmake aria2 tmux mpv
+sudo apt install gvim curl git cmake aria2 tmux mpv
 cp .gitconfig ~/.gitconfig
+```
+## vim-plug
+```
+curl -flo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 ## pyenv
 ```
@@ -21,7 +26,8 @@ sudo apt install mpv
 ## aria2
 ```
 sudo apt install aria2
-ln ~/.aria2/aria2.conf aria2c.conf
+mkdir ~/.aria2
+ln ~/dotfiles/aria2.conf ~/.aria2/aria2c.conf
 ```
 
 ## YouCompleteMe
@@ -38,6 +44,8 @@ sudo npm i -g typescript js-beautify
 ```
 # Set up
 ```
-ln -s ~/dotfiles/.vimrc .vimrc
-ln -s ~/dotfiles/.tmux.conf .tmux.conf
+ln -s ~/dotfiles/.vimrc ~/.vimrc
+ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 ```
+## Additional Settings for ArchLinux
+install gvim

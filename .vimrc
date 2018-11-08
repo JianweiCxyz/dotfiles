@@ -59,6 +59,8 @@ endfunction
 nnoremap <leader>a gg"*yG<CR>
 nnoremap <leader>y :call CopyAllExceptMain()<CR>
 nnoremap <leader>p Go<ESC>"*p<CR>
+"sudo save the file
+command! W silent execute 'write !sudo tee ' . shellescape(@%, 1) . ' >/dev/null'
 
 " Nerdtree Plugin
 map <C-n> :NERDTreeToggle<CR>
@@ -90,8 +92,11 @@ if !exists('g:AutoPairsShortcutJump')
   let g:AutoPairsShortcutJump = '<C-l>'
 endif
 
+
 " solarized
-syntax enable
-set background=dark
-colorscheme solarized
+if has("gui_running")
+    syntax enable
+    set background=dark
+    colorscheme solarized
+endif
 
