@@ -8,6 +8,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'pangloss/vim-javascript'
 Plug 'altercation/vim-colors-solarized'
 Plug 's3rvac/AutoFenc'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 "General settings
